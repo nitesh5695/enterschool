@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="static/Home1.css">
+         <title>Event_Images-student</title>
+     <meta charset="utf-8">
+
+
+
+     <meta name="viewport" content="width=720">
+   
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+ </head>
+<body>
+    
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/main">
+    <h3>EnterSchool</h3>
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     <div style="background-color:green; border-radius:10px;"> <a  color="black" class="nav-link" href="/main">Home</a></div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Downloads</a>
+    </li>
+    
+  </ul>
+  <div  style="position:absolute; right:10px; color:white "><div class="login_png"></div><div class="dropdown" style="float:right;">
+  <a class= "dropbtn" >{{name}}</a>
+  <div class="dropdown-content">
+  <a href="/logout">Log out</a>
+  <a href="#">code:{{code}}</a>
+  <a href="#">profile</a>
+  </div>
+</div></div>
+</nav>
+<div>
+        {% for link in all_links %}
+        
+        <img src="{{link}}" width="100" height="100" alt="wait image is loading..." style="margin-left:20px;">
+
+        {% endfor %}
+    
+    </div>    
+        
+    </body>
+</html>

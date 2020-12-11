@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <link rel="stylesheet" href="static/Home1.css">
+         <title>Homepage-student</title>
+     <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=720">
+   
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+ </head>
+<body>
+    
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/main">
+    <h3>EnterSchool</h3>
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     <div style="background-color:green; border-radius:10px;"> <a  color="black" class="nav-link" href="/main">Home</a></div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Downloads</a>
+    </li>
+    
+  </ul>
+  <div  style="position:absolute; right:10px; color:white "><div class="login_png"></div><div class="dropdown" style="float:right;">
+  <a class= "dropbtn" >{{name}}</a>
+  <div class="dropdown-content">
+  <a href="/logout">Log out</a>
+  <a href="#">code:{{code}}</a>
+  <a href="#">profile</a>
+  </div>
+</div></div>
+</nav>
+
+
+    
+        <div id="wrapper">
+            
+            <div id="content">
+               
+                <div id="all_buttons">
+    				       <table>
+                 <tr>
+                    <td ><button  class="button button1" onclick="window.location.href='/attendance';"><div class="attendance" >Attendance</div></button></td>
+                    <td> <button class="button button2" onclick="window.location.href='/my_marks';"><div class="result">Marks</div></button></td>
+                    <td><button class="button button3" onclick="window.location.href='/fee_status';"><div class="fees">Fees status</div></button></td>
+               </tr>
+                <tr>
+                    <td><button class="button button4" onclick="window.location.href='/assignments';"><div class="assignment">Assignments</div></button></td>
+                    <td><button class="button button6" onclick="window.location.href='/submit_assignments';"><div class="check_assignment">Submit assignments</div></button></td>
+                    <td><button class="button button6" onclick="window.location.href='/images';"><div class="images">Events images</div></button></td>
+               </tr>
+    		  <tr>
+    				<td><button class="button button6" onclick="window.location.href='/chat';"><div class="chat">Group chat</div></button></td>
+    		
+    				<td><button class="button button5"><div class="holidays">Holidays</div></button></td>
+    				</tr>
+               </table>
+ 
+                
+                </div>
+                <div id="notification">
+                  <h3>Notice Board</h3>
+                  <marquee><table border="0.5px black" style="font-size:10px;">
+                  {%for key,value in notification| reverse %}
+                    <tr>
+                      <td>{{key}}</td>
+                      <td>{{value}}</td>
+                    </tr>
+                  {% endfor %}
+                  </table></marquee>
+                </div>
+          </div>
+        
+
+        </div>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     </body>
+</html>

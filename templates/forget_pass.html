@@ -1,0 +1,18 @@
+<html>
+<title>forget password</title>
+<head></head>
+<body>
+<div align="center">
+    <form action="/forget_message" method="post">
+        	<label for "type">Who are you:</label>
+				<select name="type" >select
+				 <option value="student">student</option>
+				<option value="teacher">teacher</option></select>
+		<input type="text" name="code" placeholder="your class code">		
+        <input type="email" name="forget_email" placeholder="enter your email">
+        <button type="submit"> Send OTP</button>
+    </form>
+    <h1>{{message}}</h1>
+</div>
+</body>
+</html>

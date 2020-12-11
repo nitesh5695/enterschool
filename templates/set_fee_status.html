@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="static/Home1.css">
+         <title>fees-teacher</title>
+     <meta charset="utf-8">
+
+
+
+     <meta name="viewport" content="720px">
+   
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+ </head>
+<body>
+    
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/teacher_main">
+    <h3>EnterSchool</h3>
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     <div style="background-color:green; border-radius:10px;"> <a  color="black" class="nav-link" href="/teacher_main">Home</a></div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Downloads</a>
+    </li>
+    
+  </ul>
+  <div  style="position:absolute; right:10px; color:white "><div class="login_png"></div><div class="dropdown" style="float:right;">
+  <a class= "dropbtn" >{{name}}</a>
+  <div class="dropdown-content">
+  <a href="/logout">Log out</a>
+  <a href="#">code:{{code}}</a>
+  <a href="#">profile</a>
+  </div>
+</div></div>
+</nav>
+<div class="set_div" style="border:1px solid black; width:70%; background-color:#7FFFD4; padding-top:10px;">
+    <h5>{{message}} </h5>
+<div class="ml-5 mt-3">
+
+        <div class="col-mx-10">
+            <form action="/set_fee_data" method="post">
+                <div class="form-group col-md-6">
+                <label for "roll_no">Select Roll-No</label>
+                <select name="roll_no">
+                    {% for roll in roll_no %}
+                    <option value="{{roll}}">{{roll}}</option>
+                    
+                    {% endfor %}
+                    </select></div>
+                <div class="form-group col-md-6">
+                <label for "month">Submitted fees of : </label>
+               <select name="month">
+                   <option selected value='January'>Janaury</option> 
+                   
+                   <option value='February'>February</option>
+                   
+                   <option value='March'>March</option>
+                   
+                   <option value='April'>April</option> 
+                   
+                   <option value='May'>May</option>
+                   
+                   <option value='June'>June</option>
+                   
+                   <option value='July'>July</option>
+                   
+                   <option value='August'>August</option> 
+                   
+                   <option value='september'>September</option>
+                   
+                   <option value='october'>October</option>
+                   
+                   <option value='November'>November</option>
+                   
+                   <option value='December'>December</option>
+                    </select></div>
+                <div class="form-group col-md-6">
+                <label for "date">Date of submission</label>
+                <input type="date" name="date"></div>
+                <div class="form-group col-md-6">
+                <label for "rupees">Fees in Rs : </label>
+                <input type="text" name="rupees"></div><br>
+                <button type="submit" class="btn-success" align="center">Submit</button>
+            </form>
+        </div>
+        </div>
+        </div>
+<style>
+        .set_div{
+         margin:auto;       
+         margin-top:30px;
+         border-radius: 10px;
+        }
+        .set_elements{
+            margin-top:10px;
+            padding-top: 10px;
+            margin-left:20px;
+            border-radius: 10px;
+            border:0.5px solid black;
+            
+        }
+    </style>
+
+    </body>
+    
+</html>

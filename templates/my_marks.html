@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="static/Home1.css">
+         <title>My marks</title>
+     <meta charset="utf-8">
+
+
+
+     <meta name="viewport" content="width=720">
+   
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+ </head>
+<body>
+    
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/main">
+    <h3>EnterSchool</h3>
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     <div style="background-color:green; border-radius:10px;"> <a  color="black" class="nav-link" href="/main">Home</a></div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Downloads</a>
+    </li>
+    
+  </ul>
+  <div  style="position:absolute; right:10px; color:white "><div class="login_png"></div><div class="dropdown" style="float:right;">
+  <a class= "dropbtn" >{{name}}</a>
+  <div class="dropdown-content">
+  <a href="/logout">Log out</a>
+  <a href="#">code:{{code}}</a>
+  <a href="#">profile</a>
+  </div>
+</div></div>
+</nav>
+
+    <div class="set_div" style="border:1px solid black; width:80%; background-color:#7FFFD4; padding-top:10px;">
+        <form action="/result_data" method="post">
+            <select class="set_elements" name="exams" placeholder="Select your Exam" style="margin-left:30px;"required>
+                {% for z in exam_type %}
+                <option value="{{z}}" placeholder="Select your Exam" >{{z}}</option>
+                {% endfor %}
+            </select>
+            <button class="btn btn-primary set_elements" style="float:right; margin-right:60px;" type="submit">See result</button>
+        </form>
+        <table border="2px black" align="center" style="margin-top:30px;">
+            <th class="set_cell" style="padding:30px;" colspan="2"> {{exam_name}}</th>
+            <tr>
+                <th style="margin-left:10px; padding-left:30px; padding-right:30px;">subject</th>
+                <th style="margin-left:10px; padding-left:30px; padding-right:30px;">marks</th>
+
+            </tr>
+            {% for row in result %}
+            <tr>
+                <td style="margin-left:10px; padding-left:30px; padding-right:30px;">{{row[2]}}</td>
+                <td style="margin-left:10px; padding-left:30px; padding-right:30px;">{{row[3]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <style>
+           .set_div{
+         margin:auto;       
+         margin-top:30px;
+         border-radius: 10px;
+        }
+        .set_elements{
+            margin-top:10px;
+            padding-top: 10px;
+            border-radius: 10px;
+            border:0.5px solid black;
+            
+        }
+         .set_cell
+         {
+             margin-top: 7px;
+             margin-right: 9px;
+         }
+    </style>
+</body>
+</html>
