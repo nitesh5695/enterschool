@@ -195,7 +195,7 @@ def join_class_form():
         Smobile = request.form.get('mobile_no')
         Spassword = request.form.get('password')
         Sschool = request.form.get('school')
-        Srep_password = request.formm.get('confirm_password')
+        Srep_password = request.form.get('confirm_password')
         roll_no=request.form.get('roll_no')
         class_code=request.form.get('class_code')
         session['jo_name']=Sname
