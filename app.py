@@ -68,7 +68,7 @@ def random_generator():
     query="select class_code from teachers_list"
     mycursor.execute(query)
     result=mycursor.fetchall()
-    if code in result:
+    if code in result[0]:
         code=random_generator()
         
     else:
@@ -85,7 +85,7 @@ def unique_code_generator():
     query="select assignment_file from  assignment_{}".format(session['class_code'])
     mycursor.execute(query)
     result=mycursor.fetchall()
-    if code in result[0]:
+    if code in result:
         code=unique_code_generator()
         
     else:
