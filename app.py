@@ -676,7 +676,7 @@ def send_message():
        insert_query="""insert into chat_{} values("{}",current_date,current_time,"{}")""".format(session['class_code'],session['Sname'],message)
        mycursor.execute(insert_query)
        mydb.commit()
-       return redirect(url_for('chat'),code=session['class_code'],name=session['Sname'])
+       return redirect(url_for('chat'))
 
 
 
