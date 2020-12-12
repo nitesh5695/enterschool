@@ -68,7 +68,7 @@ def random_generator():
     query="select class_code from teachers_list"
     mycursor.execute(query)
     result=mycursor.fetchall()
-    if code in result[0]:
+    if code in result:
         code=random_generator()
         
     else:
@@ -544,7 +544,7 @@ def data_give_assignment():
         mycursor.execute(assignment_query)
         mydb.commit()
 
-        return render_template("give_asignment.html",message="successfully Done",name=session['tname'],code=session['class_code'])
+        return render_template("give_assignment.html",message="successfully Done",name=session['tname'],code=session['class_code'])
 @app.route('/submit_assignments')
 def submit_assignments():
     return render_template('submit_assignments.html',name=session['tname'],code=session['class_code'])
